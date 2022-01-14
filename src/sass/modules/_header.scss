@@ -91,7 +91,16 @@ header.masthead{
         }
     }
 
-
+    &.isSticky {
+        padding: 15px 0;
+        background: #fff;
+        box-shadow: 0 5px 30 px rgba(0,0,0,.1);
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+    }
 
 
 
