@@ -144,42 +144,42 @@ module.exports = (env, options) => {
         jQuery: 'jquery' //這邊以上是新增
       }),
       // For single pug file
-      new HtmlWebpackPlugin({
-        template: './pug/index.pug',
-        filename: 'index.html',
-        inject: true,
-        chunks: ['index'],
-        minify: {
-          sortAttributes: true,
-          collapseWhitespace: false, // 折疊空白字元就是壓縮Html
-          collapseBooleanAttributes: true, // 折疊布林值属性，例:readonly checked
-          removeComments: true, // 移除註釋
-          removeAttributeQuotes: true // 移除屬性的引號
-        }
-      }),
+      // new HtmlWebpackPlugin({
+      //   template: './pug/index.pug',
+      //   filename: 'index.html',
+      //   inject: true,
+      //   chunks: ['index'],
+      //   minify: {
+      //     sortAttributes: true,
+      //     collapseWhitespace: false, // 折疊空白字元就是壓縮Html
+      //     collapseBooleanAttributes: true, // 折疊布林值属性，例:readonly checked
+      //     removeComments: true, // 移除註釋
+      //     removeAttributeQuotes: true // 移除屬性的引號
+      //   }
+      // }),
     ]
   };
 
   // For mutiple pug files
-  // glob.sync('./src/pug/*.pug').forEach((path) => {
-  //   const start = path.indexOf('/pug/') + 5;
-  //   const end = path.length - 4;
-  //   const name = path.slice(start, end);
-  //   config.plugins.push(
-  //     new HtmlWebpackPlugin({
-  //       template: './pug/' + name + '.pug',
-  //       filename: name + '.html',
-  //       inject: true,
-  //       chunks: ['index'],
-  //       minify: {
-  //         sortAttributes: true,
-  //         collapseWhitespace: false,
-  //         collapseBooleanAttributes: true,
-  //         removeComments: true
-  //       }
-  //     })
-  //   );
-  // });
+  glob.sync('./src/pug/*.pug').forEach((path) => {
+    const start = path.indexOf('/pug/') + 5;
+    const end = path.length - 4;
+    const name = path.slice(start, end);
+    config.plugins.push(
+      new HtmlWebpackPlugin({
+        template: './pug/' + name + '.pug',
+        filename: name + '.html',
+        inject: true,
+        chunks: ['index'],
+        minify: {
+          sortAttributes: true,
+          collapseWhitespace: false,
+          collapseBooleanAttributes: true,
+          removeComments: true
+        }
+      })
+    );
+  });
 
   return config;
 };

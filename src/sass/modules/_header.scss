@@ -1,0 +1,99 @@
+header.masthead{
+    padding: 45px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    transition: all .4s;
+
+    .masthead__row {
+        display: flex;
+        align-items: center;
+    
+        .masthead__left {
+            flex: 0 0 33.333%;
+            max-width: 33.333%;
+        }
+
+        .masthead__center {
+            max-width: 50%;
+            flex: 0 0 50%;
+
+            .primary-menu {
+                font-size: 20px;
+                font-weight: 600;
+                display: inline-block;
+                vertical-align: bottom;
+
+                ul {
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    &::before {
+                        content: " ";
+                        display: table;
+                    }
+
+                    li {
+                        float: left;
+                        padding: 0 18px;
+
+                        a {
+                            color: #000;
+                            text-transform: uppercase;
+                            text-decoration: none;
+                            transition: color .2s;
+                            &:hover {
+                                color: #6144f7;
+                            }
+                        }
+                    }
+                    &::after {
+                        content: " ";
+                        display: table;
+                        clear: both;
+                    }
+                
+                }
+            }
+        }
+
+        .masthead__right {
+            max-width: 16.6667%;
+            flex: 0 0 16.6667%;
+
+            .btn {
+                display: inline-block;
+                border-radius: 20px;
+                text-transform: uppercase;
+                min-width: 120px;
+                font-size: 20px;
+                font-weight: 600;
+                text-align: center;
+                text-decoration: none ;
+                outline: none;
+                transition: all .3s ease;
+                transform: translateZ(0);
+                line-height: 1.4;
+
+            }
+
+            .btn--transparent {
+                border: 1px solid #6144f7;
+                padding: 5px 35px;
+                color: #000;
+                &:hover {
+                    background: #6144f7;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+
+
+
+
+}
+
